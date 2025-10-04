@@ -96,7 +96,7 @@ router.post("/:id/responder", authMiddleware, async (req, res) => {
     let siguienteTarea = null;
 
     try {
-      const iaResponse = await axios.post("http://13.59.203.146:3000/predecir", {
+      const iaResponse = await axios.post("https://ia-arbol-de-decision-production.up.railway.app/predecir", {
         puntaje: puntajeAsignado,
         correcto: esCorrecta,
         dificultad_actual: tarea.dificultad
@@ -145,5 +145,6 @@ router.get("/tareas/bloque/:bloque", async (req, res) => {
     res.status(500).json({ error: "Error al obtener las tareas por bloque." });
   }
 });
+
 
 module.exports = router;
