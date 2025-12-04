@@ -31,6 +31,9 @@ app.use("/logros-unlocked", logrosUnlockedRoutes);
 const maestroRoutes = require("./routes/maestros");
 app.use("/api/maestros", maestroRoutes);
 
+const adminRoutes = require("./routes/admin");
+app.use("/admin", adminRoutes);
+
 // Endpoints de IA
 const iaRoutes = require("./routes/ia_routes");
 app.use("/api", iaRoutes);
@@ -49,3 +52,4 @@ const HOST = process.env.HOST || "0.0.0.0";
 app.listen(PORT, HOST, () => {
   console.log(`🚀 Servidor corriendo en http://${HOST}:${PORT}`);
 });
+
